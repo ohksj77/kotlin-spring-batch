@@ -14,17 +14,17 @@ class JobConfig(
         private val jobBuilderFactory: JobBuilderFactory,
         private val batchConfig: BatchConfig
 ) {
-    private final val BATCH_STEP: String = "BATCH_STEP"
-    private final val BATCH_JOB: String = "BATCH_JOB"
-    private final val CHUNK_SIZE: Int = 10
+    private val BATCH_STEP: String = "BATCH_STEP"
+    private val BATCH_JOB: String = "BATCH_JOB"
+    private val CHUNK_SIZE: Int = 10
 
     @Bean
-    fun job() : Job = jobBuilderFactory[BATCH_JOB]
+    fun job(): Job = jobBuilderFactory[BATCH_JOB]
                 .start(step())
                 .build()
 
     @Bean
-    fun step() : Step = stepBuilderFactory[BATCH_STEP]
+    fun step(): Step = stepBuilderFactory[BATCH_STEP]
                 .chunk<Post, Post>(CHUNK_SIZE)
                 .reader(batchConfig.reader())
                 .processor(batchConfig.processor())

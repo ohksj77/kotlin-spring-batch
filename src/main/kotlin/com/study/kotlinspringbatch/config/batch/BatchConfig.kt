@@ -16,10 +16,10 @@ class BatchConfig(
 ) {
     @Bean
     @StepScope
-    fun reader() : ItemReader<Post?> = customItemReader
+    fun reader(): ItemReader<Post?> = customItemReader
 
     @Bean
-    fun processor() : ItemProcessor<Post?, Post> = ItemProcessor {
+    fun processor(): ItemProcessor<Post?, Post> = ItemProcessor {
         it.let {
             it.update()
             it
@@ -27,7 +27,7 @@ class BatchConfig(
     }
 
     @Bean
-    fun writer() : ItemWriter<Post> = ItemWriter {
+    fun writer(): ItemWriter<Post> = ItemWriter {
         postRepository.saveAll(it)
     }
 }

@@ -6,7 +6,7 @@ import org.mapstruct.Mapper
 
 @Mapper(componentModel = "spring")
 interface PostMapper {
-    fun toEntity(postRequest: PostRequest) : Post
+    fun toEntity(postRequest: PostRequest): Post
     fun toResponse(post: Post): PostResponse
-    fun toResponseList(postList: List<Post>) : List<PostResponse> = postList.map {toResponse(it)}
+    fun toResponseList(postList: List<Post>): List<PostResponse> = postList.map {toResponse(it)}
 }

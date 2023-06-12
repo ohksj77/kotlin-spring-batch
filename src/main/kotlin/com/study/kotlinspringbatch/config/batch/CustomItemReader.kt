@@ -19,8 +19,5 @@ class CustomItemReader(
         list = postRepository.findAll()
     }
 
-    override fun read(): Post? = if (nextIndex < list.size) list[nextIndex++] else {
-        nextIndex = 0
-        null
-    }
+    override fun read(): Post? = if (nextIndex < list.size) list[nextIndex++] else null
 }

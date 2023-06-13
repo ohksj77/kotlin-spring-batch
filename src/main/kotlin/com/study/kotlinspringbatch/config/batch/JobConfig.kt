@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration
 class JobConfig(
         private val stepBuilderFactory: StepBuilderFactory,
         private val jobBuilderFactory: JobBuilderFactory,
-        private val batchConfig: BatchConfig
+        private val batchStep: BatchStep
 ) {
     private val BATCH_STEP: String = "BATCH_STEP"
     private val BATCH_JOB: String = "BATCH_JOB"
@@ -26,8 +26,8 @@ class JobConfig(
     @Bean
     fun step(): Step = stepBuilderFactory[BATCH_STEP]
                 .chunk<Post, Post>(CHUNK_SIZE)
-                .reader(batchConfig.reader())
-                .processor(batchConfig.processor())
-                .writer(batchConfig.writer())
+                .reader(batchStep.reader())
+                .processor(batchStep.processor())
+                .writer(batchStep.writer())
                 .build()
 }

@@ -12,10 +12,12 @@ class CustomItemReader(
 ): ItemReader<Post?> {
     private lateinit var list: MutableList<Post>
     private var nextIndex: Int = 0
+    private val title = "Kotlin Spring"
+    private val content = "Hello Batch"
 
     @PostConstruct
     fun init() {
-        postRepository.save(Post("Kotlin Spring", "Hello Batch"))
+        postRepository.save(Post(title, content))
         list = postRepository.findAll()
     }
 

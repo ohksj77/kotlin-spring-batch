@@ -2,7 +2,7 @@
 코프링 및 스케줄링을 통한 스프링 배치 (공부용)
 
 ## Batch
-서버 작동 시작 3초 후부터 5초 간격으로 Job 수행하도록 스케줄링을 설정했다
+5초 간격으로 Job 수행하도록 스케줄링을 설정했다
 - Job은 아래 세 요소를 가진 하나의 Step으로 구성
   - itemReader -> Post 엔티티를 하나 생성/DB삽입 후 전체 조회
   - itemProcessor -> Post 마다의 content의 끝에 !를 String으로 하나씩 추가

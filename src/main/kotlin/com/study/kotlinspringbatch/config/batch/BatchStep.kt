@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-class BatchConfig(
+class BatchStep(
         private val postRepository: PostRepository,
         private val customItemReader: CustomItemReader
 ) {

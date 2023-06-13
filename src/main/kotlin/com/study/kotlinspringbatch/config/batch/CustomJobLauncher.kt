@@ -14,6 +14,6 @@ class CustomJobLauncher(
 ) {
     private var num: Long = 0
 
-    @Scheduled(initialDelay = 3000, fixedDelay = 5000)
+    @Scheduled(fixedDelay = 5000)
     fun run() = jobLauncher.run(jobConfig.job(), JobParameters(mutableMapOf(LocalDateTime.now().toString() to JobParameter(num++, true))))
 }

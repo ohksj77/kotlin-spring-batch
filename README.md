@@ -6,7 +6,7 @@
 - Job은 아래 세 요소를 가진 하나의 Step으로 구성
   - itemReader -> Post 엔티티를 하나 생성/DB삽입 후 전체 조회
   - itemProcessor -> Post 마다의 content의 끝에 !를 String으로 하나씩 추가
-  - itemWriter ->  Processor에서의 변경사항을 저장 (Dirty Checking 사용하지 않음)
+  - itemWriter ->  Processor에서의 변경사항을 저장
 
 ## 결과
 <img width="300" alt="image" src="https://github.com/ohksj77/kotlin-spring-batch/assets/89020004/35bef7fd-ca74-4d7c-8d9d-689b7ff98f3d">
